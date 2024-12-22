@@ -8,7 +8,9 @@ export const getChannelData = async (
   channel: string,
 ): Promise<KickChannelInfo | null> => {
   const puppeteerExtra = puppeteer.use(StealthPlugin());
-  const browser = await puppeteerExtra.launch({ headless: true });
+  const browser = await puppeteerExtra.launch({ headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+   });
 
   const page = await browser.newPage();
 
