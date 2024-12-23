@@ -14,6 +14,7 @@ export const getChannelData = async (
   });
 
   const page = await browser.newPage();
+  await page.setViewport({ width: 1280, height: 800 });
 
   try {
     const response = await page.goto(
@@ -56,6 +57,7 @@ export const getVideoData = async (
   const puppeteerExtra = puppeteer.use(StealthPlugin());
   const browser = await puppeteerExtra.launch({ headless: true });
   const page = await browser.newPage();
+  await page.setViewport({ width: 1280, height: 800 });
 
   try {
     const response = await page.goto(
@@ -112,6 +114,7 @@ export const authentication = async ({
   });
 
   const page = await browser.newPage();
+  await page.setViewport({ width: 1280, height: 800 });
   let requestData: any[] = [];
 
   // Enable request interception
